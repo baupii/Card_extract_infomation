@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <style>
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      img{
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+      }
+      .box{
+          width: 10%;        
+          /*border: 5px solid black;*/
+        }
+
+    body {
+      font-family: Arial;
+      color: white;
+    }
+
+    .split1 {
+      height: 100%;
+      width: 10%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    .split2 {
+      height: 100%;
+      width: 90%;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 10px;
+      padding-right: 0px;
+    }
+
+    .left {
+      left: 0;
+      background-color: white;
+    }
+
+    .right {
+      right: 0;
+      background-color: rgb(31, 44, 100, 0.08);
+      /*background-color: #99CC99;*/
+    }
+
+    .centered1 {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .centered2 {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+    }
+
+    .centered img {
+      width: 150px;
+      border-radius: 20%;
+    }
+
+    #box {
+        margin: 2%;
+        padding: 10px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        border: solid 1.5px green;
+        height: 8%;
+        border-radius:10px;
+        background-color: rgb(31, 44, 100, 0.3);
+    }
+
+    #box_ {
+        margin: 2%;
+        padding: 10px;
+        border: solid 1.5px green;
+        max-height: 50%;
+        border-radius:10px;
+    }
+
+    #box__ {
+        /*flex-grow: 1;*/
+        display: flex;
+        flex-direction: row;
+        /*border: solid 1px green;*/
+        max-height: 50%;
+        max-width: 70%;
+    }
+
+    #box1 {
+        margin: 1%;
+        flex-grow: 1;     /* dòng này để chia tỷ lệ các ô trong dòng */
+        border: dashed 1px orange;
+        height: 100%;
+        width: 30%;
+        border-radius:10px;
+    }
+
+    #box2 {
+        margin: 1%;
+        flex-grow: 1;
+        border: solid 1px orange;
+        height: 40%;
+        width: 40%;
+        background-color: black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:10px;}
+
+    </style>
+
+    <title>Flask app</title>
+</head>
+
+<body>
+
+  <!-- menu trái -->
+  <div class="split1 left">
+    <div >
+      <img src="../static/img_all.png" alt="" width="300" height="100" >
+
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" >
+            <a class="nav-link" href="{{ url_for('view_home') }}" style="color: lightslategray">Home</a>
+        </li>
+        <li class="nav-item" >
+            <a class="nav-link" href="{{ url_for('view_first_page') }}" style="color: red;">CCCD mới</a>
+        </li>
+        <li class="nav-item" >
+            <a class="nav-link" href="{{ url_for('view_second_page') }}" style="color: lightslategray;">CCCD cũ</a>
+        </li>
+        <li class="nav-item" >
+            <a class="nav-link" href="{{ url_for('view_third_page') }}" style="color: lightslategray;">CMND</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="split2 right">
+
+    <!-- title -->
+    <div style="border-bottom: 2px solid gray; height: 40px; width:100%">
+
+        <a style="color: #BB0000; padding-left: 10px; padding-top: 10px; font-size: 15px;" 
+                    href="https://phenikaa-uni.edu.vn/vi">
+                    Visit Phenikaa University
+        </a>
+
+        <button  style="float: right; border: 1px solid orange; 
+                    width:auto; overflow: hidden; text-align: center; font-size: 15px;" type="submit">
+                    Liên hệ 
+        </button>
+
+    </div>
+
+
+    <!-- Nội dung -->
+
+    <div>
+      <br>
+      <h1 style="font-size: 25px; color: black;padding-left: 10px;"><strong>Nhận diện ký tự CCCD mới</strong></h1>
+      <br>
+      <h1 style="font-size: 15px; color: black;padding-left: 50px;">Chọn loại tài liệu</h1>
+    </div>
+
+      
+
+      <!-- Menu chọn  -->
+
+
+
+    <!--  style="align-items: center; justify-content: center để căn giữa button -->
+    <div id="box" style="align-items: center; justify-content: center;"> 
+      <form method="post" action="/next_to_viet_word">
+        <button type="submit"   
+              name="btn2" 
+              value="Read2" 
+              style="float: right; border: 1px solid orange; border-radius:5px;
+                    background-color: #CC0000; color: white;
+                    height: 100%; width: 200px; overflow: hidden; text-align: center;
+                    font-size: 15px; margin: 10px;">
+
+                    Nhận diện mặt trước
+        </button>
+      </form>
+
+      <form method="post" action="/next_to_viet_name">
+        <button type="submit"   
+              name="btn2" 
+              value="Read2" 
+              style="float: right; border: 1px solid orange; border-radius:5px;
+                    height: 100%; width: 200px; overflow: hidden; text-align: center;
+                    font-size: 15px; margin: 10px;">
+
+                    Nhận diện mặt sau
+        </button>
+      </form>
+    </div>
+
+    <!-- Hết menu chọn -->
+
+
+
+
+
+
+    <!-- Phần up ảnh và trả về kq -->
+
+
+    <div style="padding-left: 50px">
+      <!-- <h1 style="font-size: 15px; color: black;padding-left: 50px;">Tải ảnh từ máy bạn lên</h1> -->
+
+      <!-- <input style="padding-left: 50px;" type="file" name="my_image" id="pwd">  -->
+      <form class="form-horizontal" action="/submit_word" method="post" enctype="multipart/form-data">
+
+        <div class="form-group", style="width: 30%">
+          <h1 style="font-size: 15px; color: black">Tải ảnh từ máy bạn lên</h1>
+          <!-- <label class="control-label col-sm-2" for="pwd">Tải ảnh từ máy bạn lên :</label> -->
+          <div class="col-sm-10">          
+            <input style="line-height: 0.9" type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+          </div>
+        </div>
+
+        <br>
+
+        <div style="width: 100px" class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+            <button style="line-height: 0.9" type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div id = "box_">
+      <div id="box__">         
+
+        <div id = "box2" >
+        <!--   <h1>sdkfh</h1> -->
+          <p><img style="align-items: center" src="../static/c/{{path1}}" height=250px width=450px></p>
+        </div>
+        <br>
+        <div style="padding-left: 10%;">
+          <!-- <a style="color: black;">path : {{path1}}</a>  -->
+          <br>
+          <a style="color: black;">Name : {{name}}</a> 
+          <br>
+          <a style="color: black;">ID : {{ID}}</a> 
+          <br>
+          <a style="color: black;">Date : {{date}}</a>
+           <br>
+          <a style="color: black;">Gender : {{gender}}</a>
+           <br>
+          <a style="color: black;">Origin : {{origin}}</a>
+           <br>
+          <a style="color: black;">Residence : {{residence}}</a>
+           <br>
+        </div>
+        
+
+      </div>
+<!--       <img style="align-items: center" src="../static/{{path1}}" height=300px width=500px>
+      <img style="align-items: center" src="../static/abc.jpg" height=300px width=500px>
+ -->
+
+    
+    <!-- Hết phần  up ảnh và trả về kq -->
+
+<!-- <p style="text-align: center;"><img src="../static/{{path1}}" height="400px" width="400px"></p> -->
+
+
+
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

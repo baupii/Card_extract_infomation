@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resize Image Proportionally with CSS</title>
+<style>
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+    }
+    .box{
+        width: 250px;        
+        border: 5px solid black;
+    }    
+    .box.large{
+        height: 300px;
+    }
+    .box.small{
+        height: 100px;
+    }
+</style>
+</head>
+<body>
+    <h2>Image inside Auto-height Div</h2>
+    <div class="box">
+        <img src="../static/img_all.png" alt="Cloudy Sky">
+    </div>
+    <br>
+    <h2>Image inside Portrait Div</h2>
+    <div class="box large">
+        <img src="../static/img_all.png" alt="Cloudy Sky">
+    </div>
+    <br>
+    <h2>Image inside Landscape Div</h2>
+    <div class="box small">
+        <img src="../static/img_all.png" alt="Cloudy Sky">
+    </div>
+</body>
+</html>
