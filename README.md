@@ -17,10 +17,11 @@ Beyond its immediate advantages, the intelligent information extraction system a
 Embrace the future of data extraction with our intelligent solution, and witness a significant boost in operational efficiency, accuracy, and security. Empower your organization to stay ahead in the digital landscape with this transformative technology.
 
 ## Workflow
-![](https://github.com/BauPi9299/Card_extract_infomation/blob/main/source_image_readme/work_flow.png)
+<img src = 'https://github.com/BauPi9299/Card_extract_infomation/blob/main/source_image_readme/work_flow.png' style = "align: center">
 
 ### How to run
 1. Install package:
+> **_NOTE :_** Support only for Linux, MacOs
 ```bash
 pip install -r requirement.txt
 ```
