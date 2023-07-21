@@ -3,4 +3,4 @@ This repo is extract infomation from VN id card
 
 The demo application can be found at ....
 ## Previews
-![slide](https://raw.githubusercontent.com/nagadomi/waifu2x/master/images/slide.png)
+![](https://github.com/BauPi9299/Card_extract_infomation/blob/main/Flask%20app%20gif.gif)
